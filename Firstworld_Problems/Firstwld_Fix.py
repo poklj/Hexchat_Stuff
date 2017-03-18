@@ -1,12 +1,12 @@
 try:
     import hexchat as hxc  # Ignore the error
-    hxc.print("Imported")
+    hxc.prnt("Imported")
 except ImportError:
     print("Import into hexchat")
 try:
     import re
 except ImportError:
-    hxc.print("Re failed to import")
+    hxc.prnt("Re failed to import")
     print("Re failed to import")
     pass
 
@@ -19,7 +19,7 @@ __module_description__ = "To fix the ultimate first world problem, Having to gho
 
 def disconnect_cb(word, word_eol, userdata):
 
-    print("Disc._CB OUT:"+word+" "+word_eol+" "+userdata)
+    hxc.prnt("Disc._CB OUT:"+word+" "+word_eol+" "+userdata)
     return hxc.EAT_NONE
 
 
