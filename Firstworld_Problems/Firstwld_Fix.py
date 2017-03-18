@@ -25,4 +25,4 @@ def disconnect_cb(word, word_eol, userdata):
 
 
 
-hxc.hook_server("DISCONNECTED", disconnect_cb)
+hxc.hook_print("DISCONNECTED", disconnect_cb) # Hook the Disconnect text event
