@@ -25,7 +25,7 @@ def disconnect_cb(word, word_eol, userdata):
     for x in word_eol:
         WordE = WordE + x
 
-    hxc.prnt("Disc._CB OUT:" + "word:" + word + " ;" + "WordE: " + WordE + " ;")
+    hxc.prnt("Disc._CB OUT:" + "word:" + str(word) + " ;" + "WordE: " + str(WordE) + " ;")
 
     return hxc.EAT_NONE
 
