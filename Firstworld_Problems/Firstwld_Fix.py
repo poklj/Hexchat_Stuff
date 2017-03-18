@@ -18,8 +18,17 @@ __module_description__ = "To fix the ultimate first world problem, Having to gho
 
 
 def disconnect_cb(word, word_eol, userdata):
+    WordE = str(word_eol)
 
-    hxc.prnt("Disc._CB OUT:"+word+" "+word_eol+" "+userdata)
+    hxc.prnt("Disc._CB OUT:"
+             + "word:"
+             + word
+             + " ;"
+             + "WordE: "
+             + WordE
+             + " ;"
+             + "Userdata: "
+             + userdata)
     return hxc.EAT_NONE
 
 
