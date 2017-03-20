@@ -13,7 +13,6 @@ try:
     import time
 except:
     pass
-
 __module_name__ = "Firstwld_fix"
 __module_version__ = "ALPHA"
 __module_description__ = "To fix the ultimate first world problem, Having to ghost a previous nick and re-nick"
@@ -27,7 +26,8 @@ Debug = 1
 
 class HexChat_Hooks:
 
-    def disconnect_cb(self,word, word_eol, userdata):
+    @staticmethod
+    def disconnect_cb(word, word_eol, userdata):
 
         WordE = ""
         UD = ""
@@ -42,7 +42,8 @@ class HexChat_Hooks:
 
         return hxc.EAT_NONE
 
-    def NickClash_cb(self,word, word_eol,userdata):
+    @staticmethod
+    def NickClash_cb(word, word_eol,userdata):
 
         WordE = ""
         UD= ""
@@ -51,7 +52,7 @@ class HexChat_Hooks:
             WordE = WordE + x
 
         if Debug == 1:
-            hxc.prnt("NickClash_CB OUT: "+ "word: " + str(word) + " ;" + "WordE: " + str(WordE) +";")
+            hxc.prnt("NickClash_CB OUT: "+ "word: " + str(word) + " ;" + "WordE: " + str(WordE) + ";")
 
         # Grab Nick in use
         # NickinUse = word_eol[0]
@@ -78,7 +79,7 @@ def Nickclash_Timer(word_eol, *args):
 
 
 def Automate(word_eol):
-    # TODO: Finish the automate steps
+
     Nickinuse = word_eol[0]
 
     # Run the ghost command
@@ -87,5 +88,5 @@ def Automate(word_eol):
 
     return hxc.EAT_NONE
 
-hxc.hook_print("DISCONNECTED", HexChat_Hooks.disconnect_cb) # Hook the Disconnect text event
+hxc.hook_print("DISCONNECTED", HexChat_Hooks.disconnect_cb)  # Hook the Disconnect text event
 hxc.hook_print("NICK CLASH", HexChat_Hooks.NickClash_cb)

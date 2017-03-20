@@ -31,3 +31,9 @@ print("11 second test")
 check_timeclash(1)
 time.sleep(14)
 check_timeclash(2)
+
+import re
+
+reg = "Hello (World|world)"
+string = "Hello Python"
+re.match(reg, string)
